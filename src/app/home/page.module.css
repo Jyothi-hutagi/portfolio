@@ -1,0 +1,129 @@
+.main {
+  min-height: 100vh;
+  padding: 4rem;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 50%,
+    #1a1a2e 100%
+  );
+  animation: gradientAnimation 15s ease infinite;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #fff, #64b5f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  animation: slideUp 1s ease-out;
+}
+
+.description {
+  color: #bdbdbd;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  animation: slideUp 1.2s ease-out;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  animation: slideUp 1.4s ease-out;
+}
+
+.primaryButton {
+  padding: 0.8rem 2rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.primaryButton:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.secondaryButton:hover {
+  background: rgba(33, 150, 243, 0.1);
+  transform: translateY(-2px);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+}
