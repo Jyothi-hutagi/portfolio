@@ -8,6 +8,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    document.body.style.backgroundColor = '#FFFFFF';
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -15,6 +17,7 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.body.style.backgroundColor = '';
     };
   }, []);
 
@@ -28,11 +31,11 @@ export default function Header() {
       justifyContent: 'center',
       alignItems: 'center',
       padding: '0 10%',
-      backgroundColor: '#1a1a1a',
+      backgroundColor: isScrolled ? '#F5F5F5' : 'transparent',
       borderRadius: isScrolled ? '10px' : '0',
       transition: 'all 0.3s ease',
       left: isScrolled ? '20%' : '0',
-      color: '#fff'
+      color: '#000'
     }}>
       <nav style={{
         width: '100%',
@@ -40,7 +43,7 @@ export default function Header() {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <Link href="/home">Home</Link>
+        <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
         <Link href="/contact">Contact</Link>

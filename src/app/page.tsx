@@ -1,40 +1,80 @@
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <>
-      <section className="h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold mb-4">Jyothi Hutagi</h1>
-          <p className="text-xl text-gray-600">Full Stack Developer & Designer</p>
-        </div>
-      </section>
+    <main style={{
+      padding: '120px 10% 0',
+      textAlign: 'center',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <div style={{
+        backgroundColor: '#2B2B2B',
+        color: 'white',
+        padding: '8px 20px',
+        borderRadius: '50px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        marginBottom: '40px'
+      }}>
+        <span style={{ fontSize: '20px' }}>✨</span>
+        Available for new projects
+      </div>
 
-      <section className="h-screen bg-gray-200 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A passionate developer with expertise in building modern web applications
-          </p>
-        </div>
-      </section>
+      <h1 style={{
+        fontSize: '64px',
+        lineHeight: '1.2',
+        marginBottom: '24px',
+        fontWeight: '500'
+      }}>
+        Your Brand's Digital Partner
+        <br />
+        made for Growth
+        <span style={{
+          position: 'relative',
+          display: 'inline-block'
+        }}>
+          <span style={{
+            position: 'absolute',
+            bottom: '-10px',
+            left: '0',
+            width: '100%',
+            height: '8px',
+            backgroundColor: '#CDFF6B',
+            zIndex: '-1'
+          }}></span>
+        </span>
+      </h1>
 
-      <section className="h-screen bg-gray-300 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold mb-4">My Projects</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Showcase of my recent work and contributions
-          </p>
-        </div>
-      </section>
+      <p style={{
+        fontSize: '20px',
+        color: '#666',
+        maxWidth: '800px',
+        margin: '0 auto 40px',
+        lineHeight: '1.6'
+      }}>
+        Our creative ideas combined with the power of webflow gives your
+        website special feel. Your vision, our innovation!
+      </p>
 
-      <section className="h-screen bg-gray-400 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Let's connect and discuss your next project
-          </p>
-        </div>
-      </section>
-    </>
+      <Link href="/contact" style={{
+        backgroundColor: '#CDFF6B',
+        padding: '16px 32px',
+        borderRadius: '50px',
+        textDecoration: 'none',
+        color: '#000',
+        fontSize: '18px',
+        fontWeight: '500',
+        display: 'inline-block'
+      }}>
+        Get started today
+      </Link>
+    </main>
   );
 }
