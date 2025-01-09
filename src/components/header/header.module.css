@@ -1,27 +1,158 @@
 /* src/components/header/header.css */
 .header {
     position: fixed;
+    top: 0;
     width: 100%;
-    height: 100px;
+    height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 10%;
-    background-color: #1a1a1a;
+    padding: 0 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000;
+    z-index: 1000;
     transition: all 0.3s ease;
-    color: #fff;
   }
   
   .header.scrolled {
     top: 10px;
-    width: 60%;
-    border-radius: 10px;
-    left: 20%;
+    width: 80%;
+    left: 10%;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logoIcon {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #2B2B2B;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logoText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logoText span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .logoText span:last-child {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.3px;
   }
   
   .nav {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 32px;
     align-items: center;
+  }
+  
+  .navLink {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .navLink:hover {
+    color: #CDFF6B;
+  }
+  
+  .talkButton {
+    background-color: #CDFF6B;
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .talkButton:hover {
+    background-color: #b8ff42;
+  }
+  
+  .menuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+  
+  .menuButton span {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .menuButton {
+      display: flex;
+    }
+    
+    .menuButton.open span:first-child {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .menuButton.open span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .menuButton.open span:last-child {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      flex-direction: column;
+      justify-content: center;
+      transition: right 0.3s ease;
+      padding: 20px;
+    }
+    
+    .nav.open {
+      right: 0;
+    }
+    
+    .header.scrolled {
+      width: 90%;
+      left: 5%;
+    }
   }

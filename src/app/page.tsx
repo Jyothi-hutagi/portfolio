@@ -13,7 +13,8 @@ export default function Home() {
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      <div style={{
+
+  <div style={{
         backgroundColor: '#2B2B2B',
         color: 'white',
         padding: '8px 20px',
@@ -24,7 +25,7 @@ export default function Home() {
         marginBottom: '40px'
       }}>
         <span style={{ fontSize: '20px' }}>✨</span>
-        Available for new projects
+        Looking Forward to New Ventures
       </div>
 
       <h1 style={{
@@ -33,9 +34,7 @@ export default function Home() {
         marginBottom: '24px',
         fontWeight: '500'
       }}>
-        Your Brand's Digital Partner
-        <br />
-        made for Growth
+    Hey, I'M Jyothi Hutagi
         <span style={{
           position: 'relative',
           display: 'inline-block'
@@ -59,8 +58,7 @@ export default function Home() {
         margin: '0 auto 40px',
         lineHeight: '1.6'
       }}>
-        Our creative ideas combined with the power of webflow gives your
-        website special feel. Your vision, our innovation!
+        Transforming ideas into reality with modern web technologies. <br/>Whether it’s crafting user-friendly applications or building secure, scalable systems, I bring your vision to life with creativity and precision.
       </p>
 
       <Link href="/contact" style={{
@@ -73,7 +71,7 @@ export default function Home() {
         fontWeight: '500',
         display: 'inline-block'
       }}>
-        Get started today
+        Let’s Build Something Amazing Together!
       </Link>
     </main>
   );

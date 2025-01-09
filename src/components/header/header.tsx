@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
+import styles from './header.module.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,28 +26,86 @@ export default function Header() {
     <header style={{
       position: 'fixed',
       top: isScrolled ? '10px' : '0',
-      width: isScrolled ? '60%' : '100%',
-      height: '100px',
+      width: isScrolled ? '80%' : '100%',
+      height: '70px',
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '0 10%',
-      backgroundColor: isScrolled ? '#F5F5F5' : 'transparent',
-      borderRadius: isScrolled ? '10px' : '0',
+      padding: '0 5%',
+      backgroundColor: isScrolled ? '#F5F5F5' : 'rgba(255, 255, 255, 0.95)',
+      borderRadius: isScrolled ? '16px' : '0',
       transition: 'all 0.3s ease',
-      left: isScrolled ? '20%' : '0',
-      color: '#000'
+      left: isScrolled ? '10%' : '0',
+      color: '#000',
+      zIndex: 1000,
+      boxShadow: isScrolled ? '0 4px 20px rgba(0, 0, 0, 0.05)' : 'none'
     }}>
-      <nav style={{
-        width: '100%',
+      <div style={{
         display: 'flex',
-        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: '12px'
+      }}>
+        <div style={{
+          fontSize: '24px',
+          fontWeight: 'bold',
+          backgroundColor: '#2B2B2B',
+          color: 'white',
+          width: '40px',
+          height: '40px',
+          borderRadius: '12px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          JH
+        </div>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start'
+        }}>
+          <span style={{
+            fontSize: '16px',
+            fontWeight: '600',
+            letterSpacing: '0.5px'
+          }}>
+            Jyothi Hutagi
+          </span>
+          <span style={{
+            fontSize: '13px',
+            color: '#666',
+            letterSpacing: '0.3px'
+          }}>
+            Full Stack Developer
+          </span>
+        </div>
+      </div>
+
+      <nav style={{
+        display: 'flex',
+        gap: '32px',
         alignItems: 'center'
       }}>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/contact">Contact</Link>
+        {[
+          { href: "/", label: "Home" },
+          { href: "/about", label: "About" },
+          { href: "/projects", label: "Projects" },
+          { href: "/contact", label: "Contact" }
+        ].map((link) => (
+          <Link 
+            key={link.href} 
+            href={link.href}
+            className={styles.navLink}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <Link 
+          href="/contact"
+          className={styles.talkButton}
+        >
+          Let's Talk
+        </Link>
       </nav>
     </header>
   );

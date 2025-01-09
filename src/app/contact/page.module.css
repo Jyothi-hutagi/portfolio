@@ -116,3 +116,25 @@
   outline: none;
   border-color: #000;
 }
+
+.socialLinks {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2B2B2B;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+}
