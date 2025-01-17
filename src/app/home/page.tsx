@@ -1,28 +1,29 @@
-import styles from './page.module.css'
+import Link from 'next/link';
+import styles from './page.module.css';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>
-          Jyothi Hutagi
-        </h1>
-        <h2 className={styles.subtitle}>
-          Fullstack Web Developer
-        </h2>
-        <p className={styles.description}>
-          Welcome to my portfolio! I specialize in building modern web applications
-          using cutting-edge technologies and best practices.
-        </p>
-        <div className={styles.buttonContainer}>
-          <button className={styles.primaryButton}>
-            View Projects
-          </button>
-          <button className={styles.secondaryButton}>
-            Contact Me
-          </button>
-        </div>
+    <main className={styles['home-container']}>
+      <div className={styles.banner}>
+        <span className={styles['banner-emoji']}>✨</span>
+        Looking Forward to New Ventures
       </div>
+
+      <h1 className={styles.title}>
+        Hey, I'M Jyothi Hutagi
+        <span className={styles['highlight-container']}>
+          <span className={styles.highlight}></span>
+        </span>
+      </h1>
+
+      <p className={styles.description}>
+        Transforming ideas into reality with modern web technologies. <br/>
+        Whether it's crafting user-friendly applications or building secure, scalable systems, I bring your vision to life with creativity and precision.
+      </p>
+
+      <Link href="/contact" className={styles['cta-button']}>
+        Let's Build Something Amazing Together!
+      </Link>
     </main>
-  )
+  );
 }
