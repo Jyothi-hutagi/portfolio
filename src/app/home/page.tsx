@@ -10,7 +10,7 @@ export default function Home() {
       </div>
 
       <h1 className={styles.title}>
-        Hey, I'M Jyothi Hutagi
+        Hey, I'm Jyothi Hutagi
         <span className={styles['highlight-container']}>
           <span className={styles.highlight}></span>
         </span>
@@ -20,8 +20,7 @@ export default function Home() {
         Transforming ideas into reality with modern web technologies. <br/>
         Whether it's crafting user-friendly applications or building secure, scalable systems, I bring your vision to life with creativity and precision.
       </p>
-
-      <Link href="/contact" className={styles['cta-button']}>
+      <Link href="#contact" className={styles['cta-button']}>
         Let's Build Something Amazing Together!
       </Link>
     </main>

@@ -7,12 +7,25 @@ import styles from './header.module.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     document.body.style.backgroundColor = '#FFFFFF';
     
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
+      
+      const sections = document.querySelectorAll('section');
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach((section) => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          setActiveSection(section.id);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,6 +34,14 @@ export default function Header() {
       document.body.style.backgroundColor = '';
     };
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setActiveSection(sectionId);
+  };
 
   return (
     <header style={{
@@ -81,31 +102,33 @@ export default function Header() {
         </div>
       </div>
 
-      <nav style={{
-        display: 'flex',
-        gap: '32px',
-        alignItems: 'center'
-      }}>
-        {[
-          { href: "/", label: "Home" },
-          { href: "/about", label: "About" },
-          { href: "/projects", label: "Projects" },
-          { href: "/contact", label: "Contact" }
-        ].map((link) => (
-          <Link 
-            key={link.href} 
-            href={link.href}
-            className={styles.navLink}
-          >
-            {link.label}
-          </Link>
-        ))}
-        <Link 
-          href="/contact"
+      <nav className={styles.nav}>
+        <button 
+          onClick={() => scrollToSection('home')}
+          className={`${styles.navLink} ${activeSection === 'home' ? styles.active : ''}`}
+        >
+          Home
+        </button>
+        <button 
+          onClick={() => scrollToSection('about')}
+          className={`${styles.navLink} ${activeSection === 'about' ? styles.active : ''}`}
+        >
+          About
+        </button>
+
+        <button 
+          onClick={() => scrollToSection('projects')}
+          className={`${styles.navLink} ${activeSection === 'projects' ? styles.active : ''}`}
+        >
+          Projects
+        </button>
+  
+        <button 
+          onClick={() => scrollToSection('contact')}
           className={styles.talkButton}
         >
           Let's Talk
-        </Link>
+        </button>
       </nav>
     </header>
   );

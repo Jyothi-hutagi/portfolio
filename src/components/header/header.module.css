@@ -78,11 +78,15 @@
   }
   
   .navLink:hover {
-    color: #CDFF6B;
+    color: #798d34;
+  }
+  
+  .navLink.active {
+    color: #798d34;
   }
   
   .talkButton {
-    background-color: #CDFF6B;
+    background-color: #798d34;
     padding: 12px 24px;
     border-radius: 50px;
     color: #000;

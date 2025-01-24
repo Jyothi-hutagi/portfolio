@@ -1,36 +1,27 @@
-import AboutPage from '@/app/about/page';
-//import ProjectsPage from '@/app/projects/page';
-import ContactPage from '@/app/contact/page';
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/header';
-import HomePage from '@/app/home/page';
+import About from '@/app/about/page';
+import Contact from '@/app/contact/page';
+import Home from '@/app/home/page';
+import Projects from '@/app/projects/page';
 import styles from './page.module.css';
 
-export default function Home() {
+export default function MainPage() {
   return (
-    <>
-   
+    <main className={styles.mainContainer}>
+      <section id="home" className={styles.section}>
+        <Home />
+      </section>
       
-      <main className={styles.main}>
-        {/* Each section wraps your existing page components */}
-        <section id="home" className={styles.section}>
-          <HomePage />
-        </section>
-
-        <section id="about" className={`${styles.section} ${styles.altBg}`}>
-          <AboutPage />
-        </section>
-
-        {/* <section id="projects" className={styles.section}>
-          <ProjectsPage />
-        </section> */}
-
-        <section id="contact" className={`${styles.section} ${styles.altBg}`}>
-          <ContactPage />
-        </section>
-      </main>
-
-     
-    </>
+      <section id="about" className={styles.section}>
+        <About />
+      </section>
+      
+      <section id="projects" className={styles.section}>
+        <Projects />
+      </section>
+      
+      <section id="contact" className={styles.section}>
+        <Contact />
+      </section>
+    </main>
   );
 }
